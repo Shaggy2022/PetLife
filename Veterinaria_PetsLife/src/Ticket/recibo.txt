@@ -1,0 +1,36 @@
+====== VETERINARIA PETS LIFE ======
+
+Cliente: Jose
+Veterinario: Julian
+Mascota: Lulu
+Medicamento/Servicio: Baño General
+Tipo: Aseo
+Cantidad: 1
+Precio unitario: $50000.0
+Subtotal: $50000.0
+----------------------------
+Cliente: Juan
+Veterinario: Juan
+Mascota: Tita
+Medicamento/Servicio: Baño General
+Tipo: Aseo
+Cantidad: 1
+Precio unitario: $50000.0
+Subtotal: $50000.0
+----------------------------
+Cliente: Jose
+Veterinario: Julian
+Mascota: Lulu
+Medicamento/Servicio: gotas para los piojos
+Tipo: Oral
+Cantidad: 1
+Precio unitario: $20000.0
+Subtotal: $20000.0
+----------------------------
+
+TOTAL GENERAL: $120000.0
+----- Total por Mascota -----
+Tita: $50000.0
+Lulu: $70000.0
+Fecha y hora: 2025-11-25T17:17:17.702207600
+Gracias por su preferencia!
