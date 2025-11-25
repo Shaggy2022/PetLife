@@ -18,6 +18,7 @@ public class conexion {
     private static final String user="root";
     private static final String pass="";
     private static final String url="jdbc:mysql://localhost:3306/veterinariapetslife?characterEncoding=utf8";
+    private String tabla;
     
     public Connection conectar(){
         con = null;
@@ -32,7 +33,41 @@ public class conexion {
         return con;
     }
 
-    void llenaCombo(String veterinario, String id_v, JComboBox<String> list_veterinario) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void llenaCombo(String tabla, String idColumna, String nombreColumna, JComboBox combo) {
+    String sql = "SELECT " + idColumna + ", " + nombreColumna + " FROM " + tabla;
+    Statement st;
+    conexion con = new conexion();
+    Connection conexion = con.conectar();
+    try{
+        st = conexion.createStatement();
+        ResultSet rs = st.executeQuery(sql);
+        combo.removeAllItems(); // opcional
+        while(rs.next()){
+            String item = rs.getString(idColumna) + " - " + rs.getString(nombreColumna);
+            combo.addItem(item);
+        }
+    }catch(SQLException e)
+        {
+            JOptionPane.showMessageDialog(null,"Error" + e.toString());
+        } 
+    }
+    
+
+    public void llenarTablas(JComboBox combo) {
+    String sql = "show tables";
+        Statement st;
+        conexion con = new conexion();
+        Connection conexion = con.conectar();
+        try{
+            st = conexion.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+               String tabla = rs.getString(1); // Primera columna siempre es el nombre de la tabla
+               System.out.println(tabla);
+            }
+        }catch(SQLException e)
+        {
+            JOptionPane.showMessageDialog(null,"Error" + e.toString());
+        } 
     }
 }
